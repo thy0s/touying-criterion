@@ -1,28 +1,29 @@
 /*
 "Criterion" theme by thy0s
-Inspired by:
+Inspired by and partially taken from:
   - https://github.com/touying-typ/touying/blob/main/themes/university.typ
   - https://github.com/touying-typ/touying/blob/main/themes/metropolis.typ
 */
 
 #import "@preview/touying:0.6.1": *
 
-#let highlight-box(body) = block(
-  width: 95%,
-  fill: rgb("#e0e0e0"),
-  inset: 0.3em,
-  radius: 4pt,
-  stroke: 1pt + rgb("#a0a0a0"),
-  body
-)
-
+/*
+Standard content "slide":
+- "title" sets the title if function is called directly.
+- "footer" allows for overriding the default footer for the presentation.
+- "show-level-one" allows for toggling the level 1 heading of an individual slide.
+*/
 #let slide(
-  title: auto, 
-  show-level-one: true, 
-  ..args
+  title: auto,
+  footer: auto,
+  show-level-one: true,
+  ..args,
 ) = touying-slide-wrapper(self => {
   if title != auto {
     self.store.title = title
+  }
+  if footer != auto {
+    self.store.footer = footer
   }
   let header(self) = {
     set align(top)
@@ -30,11 +31,11 @@ Inspired by:
     set align(horizon)
     set text(fill: self.colors.neutral-lightest, size: .7em)
 
-    if show-level-one {
+    if show-level-one and self.store.show-level-one {
       utils.display-current-heading(level: 1)
       linebreak()
-    } 
-    set text(size: 1.8em, weight: "bold", )
+    }
+    set text(size: 1.8em, weight: "bold")
     if self.store.title != none {
       utils.call-or-display(self, self.store.title)
     } else {
@@ -59,6 +60,10 @@ Inspired by:
   touying-slide(self: self, ..args)
 })
 
+/*
+"title-slide":
+- Title, subtitle, presenter, institution and date are taken directly from the "config-info"
+*/
 #let title-slide(
   config: (:),
   extra: none,
@@ -78,16 +83,11 @@ Inspired by:
       width: 100%,
       inset: 2em,
       {
-        components.left-and-right(
-          {
-            text(size: 1.5em, text(weight: "bold", fill: self.colors.primary, info.title))
-            if info.subtitle != none {
-              linebreak()
-              block(spacing: 1em, text(weight: "medium" , info.subtitle))
-            }
-          },
-          text(2em, utils.call-or-display(self, info.logo)),
-        )
+        text(size: 1.5em, text(weight: "bold", fill: self.colors.primary, info.title))
+        if info.subtitle != none {
+          linebreak()
+          block(spacing: 1em, text(weight: "medium", info.subtitle))
+        }
         line(length: 100%, stroke: 2pt + self.colors.primary)
         set text(size: .9em)
         if info.author != none {
@@ -108,27 +108,36 @@ Inspired by:
   touying-slide(self: self, body)
 })
 
+/*
+"outline-slide" based on the standard slide:
+- depth: Describes the max heading level displayed in the outline
+- title: Modify the title of the outline slide (e.g. for different languages)
+*/
 #let outline-slide(
-  depth: 2
-) = slide(
+  depth: 2,
   title: "Outline",
+) = slide(
+  title: title,
   show-level-one: false,
-  )[
-    #show outline.entry.where(level: 1): it => strong(it)
-    #components.adaptive-columns(
-      outline(
-        title: none, 
-        indent: auto,
-        depth: depth,
-      )
-    )
-  ] 
+)[
+  #show outline.entry.where(level: 1): it => strong(it)
+  #components.adaptive-columns(
+    outline(
+      title: none,
+      indent: auto,
+      depth: depth,
+    ),
+  )
+]
 
+/*
+"new-section-slide" is shown for every level one heading (i.e. section headings):
+- numbered: Display the heading number if it exists (default: true)
+*/
 #let new-section-slide(
-  config: (:), 
-  level: 1, 
-  numbered: true, 
-  body
+  config: (:),
+  numbered: true,
+  body,
 ) = touying-slide-wrapper(self => {
   let slide-body = {
     set std.align(horizon)
@@ -137,7 +146,7 @@ Inspired by:
     stack(
       dir: ttb,
       spacing: .65em,
-      utils.display-current-heading(level: level, numbered: numbered),
+      utils.display-current-heading(level: 1, numbered: numbered),
       block(
         height: 2pt,
         width: 100%,
@@ -162,13 +171,26 @@ Inspired by:
   touying-slide(self: self, align(horizon + center, body))
 })
 
-#let haw-theme(
+/*
+"touying-criterion":
+- "aspect-ratio" - Set the format of the slides (default: 16-9), (alternatively 4-3)
+- "lang" (ISO 639-1/2/3 language code) - Set the language of the presentation (default: "en")
+- "font" - Set the font of your choosing (default: Source Sans 3) Available at: https://api.fontsource.org/v1/download/source-sans-3
+- "text-size" - Set font size for the text body (default: 22pt)
+- "show-level-one" (bool) - Show the section heading on the contents slides (defualt: true)
+- "footer" - Set the default footer for content slides (can be overridden for individual slides)
+*/
+#let touying-criterion(
   aspect-ratio: "16-9",
+  lang: "en",
+  font: "Source Sans 3",
+  text-size: 22pt,
+  show-level-one: true,
   footer: none,
   ..args,
   body,
 ) = {
-  set text(size: 22pt, font: "Source Sans 3")
+  set text(size: text-size, font: font, lang: lang)
   show: touying-slides.with(
     config-page(
       paper: "presentation-" + aspect-ratio,
@@ -181,13 +203,14 @@ Inspired by:
     config-methods(alert: (self: none, it) => text(fill: self.colors.primary, it)),
     config-colors(
       primary: rgb("003366"),
-      secondary:  rgb("CCE5FF"),
+      secondary: rgb("CCE5FF"),
       neutral-lightest: rgb("FFFFFF"),
       neutral-darkest: rgb("000000"),
     ),
     config-store(
       title: none,
       footer: footer,
+      show-level-one: show-level-one,
     ),
     ..args,
   )
