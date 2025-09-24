@@ -1,18 +1,15 @@
-/*
-"Criterion" theme by thy0s
-Inspired by and partially taken from:
-  - https://github.com/touying-typ/touying/blob/main/themes/university.typ
-  - https://github.com/touying-typ/touying/blob/main/themes/metropolis.typ
-*/
+
+/// "Criterion" theme by thy0s
+/// Inspired by and partially taken from:
+/// - https://github.com/touying-typ/touying/blob/main/themes/university.typ
+/// - https://github.com/touying-typ/touying/blob/main/themes/metropolis.typ
 
 #import "@preview/touying:0.6.1": *
 
-/*
-Standard content "slide":
-- "title" sets the title if function is called directly.
-- "footer" allows for overriding the default footer for the presentation.
-- "show-level-one" allows for toggling the level 1 heading of an individual slide.
-*/
+/// Standard content "slide":
+/// - "title" sets the title if function is called directly.
+/// - "footer" allows for overriding the default footer for the presentation.
+/// - "show-level-one" allows for toggling the level 1 heading of an individual slide.
 #let slide(
   title: auto,
   footer: auto,
@@ -31,7 +28,7 @@ Standard content "slide":
     set align(horizon)
     set text(fill: self.colors.neutral-lightest, size: .7em)
 
-    if show-level-one and self.store.show-level-one {
+    if show-level-one and self.store.show-level-one or show-level-one and not self.store.show-level-one {
       utils.display-current-heading(level: 1)
       linebreak()
     }
@@ -60,10 +57,8 @@ Standard content "slide":
   touying-slide(self: self, ..args)
 })
 
-/*
-"title-slide":
-- Title, subtitle, presenter, institution and date are taken directly from the "config-info"
-*/
+/// "title-slide":
+/// - Title, subtitle, presenter, institution and date are taken directly from the "config-info"
 #let title-slide(
   config: (:),
   extra: none,
@@ -108,11 +103,9 @@ Standard content "slide":
   touying-slide(self: self, body)
 })
 
-/*
-"outline-slide" based on the standard slide:
-- depth: Describes the max heading level displayed in the outline
-- title: Modify the title of the outline slide (e.g. for different languages)
-*/
+///"outline-slide" based on the standard slide:
+/// - depth: Describes the max heading level displayed in the outline
+/// - title: Modify the title of the outline slide (e.g. for different languages)
 #let outline-slide(
   depth: 2,
   title: "Outline",
@@ -130,10 +123,8 @@ Standard content "slide":
   )
 ]
 
-/*
-"new-section-slide" is shown for every level one heading (i.e. section headings):
-- numbered: Display the heading number if it exists (default: true)
-*/
+/// "new-section-slide" is shown for every level one heading (i.e. section headings):
+/// - numbered: Display the heading number if it exists (default: true)
 #let new-section-slide(
   config: (:),
   numbered: true,
@@ -171,15 +162,14 @@ Standard content "slide":
   touying-slide(self: self, align(horizon + center, body))
 })
 
-/*
-"touying-criterion":
-- "aspect-ratio" - Set the format of the slides (default: 16-9), (alternatively 4-3)
-- "lang" (ISO 639-1/2/3 language code) - Set the language of the presentation (default: "en")
-- "font" - Set the font of your choosing (default: Source Sans 3) Available at: https://api.fontsource.org/v1/download/source-sans-3
-- "text-size" - Set font size for the text body (default: 22pt)
-- "show-level-one" (bool) - Show the section heading on the contents slides (defualt: true)
-- "footer" - Set the default footer for content slides (can be overridden for individual slides)
-*/
+
+/// "touying-criterion":
+/// - "aspect-ratio" - Set the format of the slides (default: 16-9), (alternatively 4-3)
+/// - "lang" (ISO 639-1/2/3 language code) - Set the language of the presentation (default: "en")
+/// - "font" - Set the font of your choosing (default: Source Sans 3) Available at: https://api.fontsource.org/v1/download/source-sans-3
+/// - "text-size" - Set font size for the text body (default: 22pt)
+/// - "show-level-one" (bool) - Show the section heading on the contents slides (defualt: true)
+/// - "footer" - Set the default footer for content slides (can be overridden for individual slides)
 #let touying-criterion(
   aspect-ratio: "16-9",
   lang: "en",
