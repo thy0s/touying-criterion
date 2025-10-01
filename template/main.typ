@@ -92,7 +92,7 @@
 
 #slide(footer: "Override the default footer if necessary.", show-level-one: true, title: "Mixing it Up")[
 
-- Show the section heading for individual slides with `show-level-one: true` 
+- Show the section heading for individual slides with `show-level-one: true`
 
 - *Or* you can show it for all slides when configuring the theme...
 

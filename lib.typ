@@ -7,13 +7,13 @@
 #import "@preview/touying:0.6.1": *
 
 /// Standard content "slide":
-/// - "title" sets the title if function is called directly.
-/// - "footer" allows for overriding the default footer for the presentation.
-/// - "show-level-one" allows for toggling the level 1 heading of an individual slide.
+/// - "title" (string) sets the title if function is called directly.
+/// - "footer" (string) allows for overriding the default footer for the presentation.
+/// - "show-level-one" (bool) allows for toggling the level 1 heading of an individual slide.
 #let slide(
   title: auto,
   footer: auto,
-  show-level-one: true,
+  show-level-one: none,
   ..args,
 ) = touying-slide-wrapper(self => {
   if title != auto {
@@ -28,10 +28,11 @@
     set align(horizon)
     set text(fill: self.colors.neutral-lightest, size: .7em)
 
-    if show-level-one and self.store.show-level-one or show-level-one and not self.store.show-level-one {
+    if show-level-one == true or self.store.show-level-one and show-level-one != false {
       utils.display-current-heading(level: 1)
       linebreak()
     }
+
     set text(size: 1.8em, weight: "bold")
     if self.store.title != none {
       utils.call-or-display(self, self.store.title)
