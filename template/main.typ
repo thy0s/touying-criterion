@@ -11,7 +11,7 @@
   show-level-one: false,
   config-info(
     title: [The "Criterion" slide template],
-    subtitle: [Internet of Things],
+    subtitle: [thy0s],
     author: [Computer Science Department],
     date: datetime.today(),
     institution: [Funk Town State University],
