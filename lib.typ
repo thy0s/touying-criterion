@@ -3,6 +3,7 @@
 /// Inspired by and partially taken from:
 /// - https://github.com/touying-typ/touying/blob/main/themes/university.typ
 /// - https://github.com/touying-typ/touying/blob/main/themes/metropolis.typ
+/// - https://github.com/JoshuaLampert/clean-math-presentation
 
 #import "@preview/touying:0.6.1": *
 
