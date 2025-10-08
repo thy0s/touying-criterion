@@ -1,19 +1,34 @@
 # touying-criterion
+
+[![Build Document](https://github.com/thy0s/touying-criterion/actions/workflows/build.yml/badge.svg)](https://github.com/thy0s/touying-criterion/actions/workflows/build.yml)
+[![Repo](https://badgen.net/static/GitHub/Repo/blue?icon=github)](https://github.com/thy0s/touying-criterion)
+[![License](https://badgen.net/static/License/MIT/blue)](https://opensource.org/license/mit)
+
 "Criterion" slide master for the [typst](https://typst.app) presentation package [touying](https://touying-typ.github.io). 
 
 It uses the *Source Sans 3* font as default, which can be downloaded [here](https://api.fontsource.org/v1/download/source-sans-3).
 
+
+You can either initialize the template in a new folder with:
 ```bash
 typst init @preview/touying-criterion:0.1.0
 ```
 
+... or import the template to an existing document with:
+
+```typst
+#import "@preview/touying-criterion:0.1.0": *
+```
+
 ## Configuration
+
+Use `#show: touying-criterion.with()` to configure the template as needed.
 
 - `aspect-ratio`: Default is *"16-9"*, alternatively *"4-3"*
 - `lang`: The language of the respective presentation (*default "en"*)
 - `font`: The font of the presentation (*default "Source Sans 3"*)
 - `text-size`: Size of the text content (*default "22pt"*)
-- `show-level-one` (bool) Show section heading on the content slides (*default: true*)
+- `show-level-one`: (bool) Show section heading on the content slides (*default: true*)
 - `footer`: The footer of the content slides (*default: none*)
 
 Other parameters, such as `title`, `subtitle`, `author`, `date` and `institution` are taken from the `config-info` object, which looks as follows: 
@@ -21,8 +36,8 @@ Other parameters, such as `title`, `subtitle`, `author`, `date` and `institution
 ```typst
   config-info(
     title: [The "Criterion" slide template],
-    subtitle: [thy0s],
-    author: [Computer Science Department],
+    subtitle: [Straightforward Presentations],
+    author: [thy0s],
     date: datetime.today(),
     institution: [Funk Town State University],
   )
