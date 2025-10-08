@@ -58,3 +58,23 @@ Parts of this template were inspired by and taken from the [university theme](ht
 If you have any problems with this template feel free to open an issue. Also, if you have anything usefult to add to this template, you can open a pull request and it will be looked at. 
 
 All constructive contributions are welcome and highly appreciated!
+
+## Examples
+
+### Title Slide
+![0](thumbnail.png)
+
+### Outline Slide
+![1](1.png)
+
+### Section Slide
+![2](2.png)
+
+### Content Slide (Without L1 Heading)
+![3](3.png)
+
+### Content Slide (With L1 Heading)
+![6](6.png)
+
+### Focus Slide
+![5](5.png)
