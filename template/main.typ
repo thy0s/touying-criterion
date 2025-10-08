@@ -11,8 +11,8 @@
   show-level-one: false,
   config-info(
     title: [The "Criterion" slide template],
-    subtitle: [thy0s],
-    author: [Computer Science Department],
+    subtitle: [Straightforward Presentations],
+    author: [thy0s],
     date: datetime.today(),
     institution: [Funk Town State University],
   ),

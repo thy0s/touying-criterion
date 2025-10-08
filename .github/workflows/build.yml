@@ -1,6 +1,6 @@
 # Credit: https://github.com/JoshuaLampert/clean-math-presentation/blob/main/.github/workflows/build.yml#L3
 
-name: Build Typst document
+name: Build Document
 on:
   push:
     branches:
