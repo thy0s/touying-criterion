@@ -65,16 +65,16 @@ All constructive contributions are welcome and highly appreciated!
 ![0](thumbnail.png)
 
 ### Outline Slide
-![1](1.png)
+![1](https://github.com/thy0s/touying-criterion/blob/assets/images/outline.png)
 
 ### Section Slide
-![2](2.png)
+![2](https://github.com/thy0s/touying-criterion/blob/assets/images/section_heading.png)
 
 ### Content Slide (Without L1 Heading)
-![3](3.png)
+![3](https://github.com/thy0s/touying-criterion/blob/assets/images/content.png)
 
 ### Content Slide (With L1 Heading)
-![6](6.png)
+![6](https://github.com/thy0s/touying-criterion/blob/assets/images/content_l1.png)
 
 ### Focus Slide
-![5](5.png)
+![5](https://github.com/thy0s/touying-criterion/blob/assets/images/focus.png)
