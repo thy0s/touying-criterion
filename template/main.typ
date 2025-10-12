@@ -3,8 +3,8 @@
 #import "../lib.typ": *
 
 #show raw: set text(size: 12pt)
-
 #show figure.caption: set text(size: 10pt)
+
 #show: touying-criterion.with(
   aspect-ratio: "16-9",
   footer: [#datetime.today().display("[year]-[month]-[day]")], 
