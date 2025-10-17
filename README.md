@@ -1,6 +1,6 @@
 # touying-criterion
 
-[![Build Document](https://github.com/thy0s/touying-criterion/actions/workflows/build.yml/badge.svg)](https://github.com/thy0s/touying-criterion/actions/workflows/build.yml)
+[![Build Document](https://github.com/thy0s/touying-simpres/actions/workflows/build.yml/badge.svg)](https://github.com/thy0s/touying-simpres/actions/workflows/build.yml)
 [![Repo](https://badgen.net/static/GitHub/Repo/blue?icon=github)](https://github.com/thy0s/touying-criterion)
 [![License](https://badgen.net/static/License/MIT/blue)](https://opensource.org/license/mit)
 
@@ -65,16 +65,16 @@ All constructive contributions are welcome and highly appreciated!
 ![0](thumbnail.png)
 
 ### Outline Slide
-![1](https://github.com/thy0s/touying-criterion/blob/assets/images/outline.png)
+![1](https://github.com/thy0s/touying-simpres/blob/assets/images/outline.png)
 
 ### Section Slide
-![2](https://github.com/thy0s/touying-criterion/blob/assets/images/section_heading.png)
+![2](https://github.com/thy0s/touying-simpres/blob/assets/images/section_heading.png)
 
 ### Content Slide (Without L1 Heading)
-![3](https://github.com/thy0s/touying-criterion/blob/assets/images/content.png)
+![3](https://github.com/thy0s/touying-simpres/blob/assets/images/content.png)
 
 ### Content Slide (With L1 Heading)
-![6](https://github.com/thy0s/touying-criterion/blob/assets/images/content_l1.png)
+![6](https://github.com/thy0s/touying-simpres/blob/assets/images/content_l1.png)
 
 ### Focus Slide
-![5](https://github.com/thy0s/touying-criterion/blob/assets/images/focus.png)
+![5](https://github.com/thy0s/touying-simpres/blob/assets/images/focus.png)
