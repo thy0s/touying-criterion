@@ -5,13 +5,13 @@
 #show raw: set text(size: 12pt)
 #show figure.caption: set text(size: 10pt)
 
-#show: touying-criterion.with(
+#show: touying-simpres.with(
   aspect-ratio: "16-9",
   footer: [#datetime.today().display("[year]-[month]-[day]")], 
   show-level-one: false,
   config-info(
-    title: [The "Criterion" slide template],
-    subtitle: [Straightforward Presentations],
+    title: [The "Simpres" slide template],
+    subtitle: [Presentation Template for Education and Business],
     author: [thy0s],
     date: datetime.today(),
     institution: [Funk Town State University],
@@ -97,7 +97,7 @@
 - *Or* you can show it for all slides when configuring the theme...
 
 ```typst 
-  #show: touying-criterion.with(
+  #show: touying-simprpes.with(
     aspect-ratio: "16-9",
     lang: "en",
     font: "Source Sans 3",
@@ -105,8 +105,8 @@
     show-level-one: false,
     footer: [#datetime.today().display("[year]-[month]-[day]")], 
     config-info(
-      title: [The "Criterion" slide template],
-      subtitle: [Clean slides],
+      title: [The "Simpres" slide template],
+      subtitle: [Presentation Template for Education and Business],
       author: [Computer Science Department],
       date: datetime.today(),
       institution: [Funk Town State University],

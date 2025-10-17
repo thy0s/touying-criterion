@@ -1,5 +1,5 @@
 
-/// "Criterion" theme by thy0s
+/// "Simpres" theme by thy0s
 /// Inspired by and partially taken from:
 /// - https://github.com/touying-typ/touying/blob/main/themes/university.typ
 /// - https://github.com/touying-typ/touying/blob/main/themes/metropolis.typ
@@ -172,7 +172,7 @@
 /// - "text-size" - Set font size for the text body (default: 22pt)
 /// - "show-level-one" (bool) - Show the section heading on the contents slides (defualt: true)
 /// - "footer" - Set the default footer for content slides (can be overridden for individual slides)
-#let touying-criterion(
+#let touying-simpres(
   aspect-ratio: "16-9",
   lang: "en",
   font: "Source Sans 3",
