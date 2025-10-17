@@ -1,28 +1,28 @@
-# touying-criterion
+# touying-simpres
 
 [![Build Document](https://github.com/thy0s/touying-simpres/actions/workflows/build.yml/badge.svg)](https://github.com/thy0s/touying-simpres/actions/workflows/build.yml)
-[![Repo](https://badgen.net/static/GitHub/Repo/blue?icon=github)](https://github.com/thy0s/touying-criterion)
+[![Repo](https://badgen.net/static/GitHub/Repo/blue?icon=github)](https://github.com/thy0s/touying-simpres)
 [![License](https://badgen.net/static/License/MIT/blue)](https://opensource.org/license/mit)
 
-"Criterion" slide master for the [typst](https://typst.app) presentation package [touying](https://touying-typ.github.io). 
+"Simpres" slide template for the [typst](https://typst.app) presentation package [touying](https://touying-typ.github.io). 
 
 It uses the *Source Sans 3* font as default, which can be downloaded [here](https://api.fontsource.org/v1/download/source-sans-3).
 
 
 You can either initialize the template in a new folder with:
 ```bash
-typst init @preview/touying-criterion:0.1.0
+typst init @preview/touying-simpres:0.1.0
 ```
 
 ... or import the template to an existing document with:
 
 ```typst
-#import "@preview/touying-criterion:0.1.0": *
+#import "@preview/touying-simpres:0.1.0": *
 ```
 
 ## Configuration
 
-Use `#show: touying-criterion.with()` to configure the template as needed.
+Use `#show: touying-simpres.with()` to configure the template as needed.
 
 - `aspect-ratio`: Default is *"16-9"*, alternatively *"4-3"*
 - `lang`: The language of the respective presentation (*default "en"*)
@@ -35,7 +35,7 @@ Other parameters, such as `title`, `subtitle`, `author`, `date` and `institution
 
 ```typst
   config-info(
-    title: [The "Criterion" slide template],
+    title: [The "Simpres" slide template],
     subtitle: [Straightforward Presentations],
     author: [thy0s],
     date: datetime.today(),
